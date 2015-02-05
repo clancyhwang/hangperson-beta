@@ -13,7 +13,7 @@ class HangpersonGame
 
   def guess(letter)
     @repeated = false
-    if letter.nil? or letter == '' or not letter =~ /^[a-z]$/i
+    if letter.nil? or letter == '' or letter =~ /^[^a-z]$/i
       raise ArgumentError
     end
 
