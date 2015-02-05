@@ -12,16 +12,11 @@ class HangpersonGame
   end
 
   def guess(letter)
-    @repeated = false
     if letter.nil? or letter == '' or letter =~ /^[^a-z]$/i
       raise ArgumentError
     end
 
-    letter = letter[0].downcase
-
-    if @guesses.include?(letter) or @wrong_guesses.include?(letter)
-      @repeated = true
-    end
+    letter = letter.downcase
 
     if @word.include?(letter) and not @guesses.include?(letter)
       @guesses += letter
